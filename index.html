@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios de Geometría y Votación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img class="logo"
+        src="https://campus.ucp.edu.ar/pluginfile.php/1/theme_universidadcuenca39/logo/1756478305/logo_header.png"
+        alt="">
+    <div class="container">
+        <h2 id="titulo">Menú Principal</h2>
+
+        <!-- Menú principal -->
+        <div id="menu-principal" class="menu">
+            <button onclick="mostrarSeccion('menu-geometria')">Perímetro y Área</button>
+            <button onclick="mostrarSeccion('form-votacion')">Votación</button>
+        </div>
+
+        <!-- Submenú Geometría -->
+        <div id="menu-geometria" class="menu oculto">
+            <button onclick="mostrarSeccion('form-circulo')">Círculo</button>
+            <button onclick="mostrarSeccion('form-pentagono')">Pentágono</button>
+            <button onclick="mostrarSeccion('form-rectangulo')">Rectángulo</button>
+            <button class="volver" onclick="mostrarSeccion('menu-principal')">⬅ Volver</button>
+        </div>
+
+        <!-- Formularios de geometría -->
+        <div id="form-circulo" class="formulario oculto">
+            <h3>Perímetro y Área de un Círculo</h3>
+            <input type="number" id="radio" placeholder="Ingrese el radio">
+            <button onclick="calcularCirculo()">Calcular</button>
+            <div id="resultado-circulo" class="resultado oculto"></div>
+            <button class="volver" onclick="mostrarSeccion('menu-geometria')">⬅ Volver</button>
+        </div>
+
+        <div id="form-pentagono" class="formulario oculto">
+            <h3>Área y Perímetro de un Pentágono</h3>
+            <input type="number" id="ladoPentagono" placeholder="Ingrese el lado">
+            <input type="number" id="apotema" placeholder="Ingrese el apotema">
+            <button onclick="calcularPentagono()">Calcular</button>
+            <div id="resultado-pentagono" class="resultado oculto"></div>
+            <button class="volver" onclick="mostrarSeccion('menu-geometria')">⬅ Volver</button>
+        </div>
+
+        <div id="form-rectangulo" class="formulario oculto">
+            <h3>Perímetro y Área de un Rectángulo</h3>
+            <input type="number" id="base" placeholder="Ingrese la base">
+            <input type="number" id="altura" placeholder="Ingrese la altura">
+            <button onclick="calcularRectangulo()">Calcular</button>
+            <div id="resultado-rectangulo" class="resultado oculto"></div>
+            <button class="volver" onclick="mostrarSeccion('menu-geometria')">⬅ Volver</button>
+        </div>
+
+        <!-- Formulario votación -->
+        <div id="form-votacion" class="formulario oculto">
+            <h3>Verificar si puede votar</h3>
+            <input type="number" id="edad" placeholder="Ingrese su edad">
+            <select id="sexo">
+                <option value="">Seleccione su sexo</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+            <button onclick="verificarVotacion()">Verificar</button>
+            <div id="resultado-votacion" class="resultado oculto"></div>
+            <button class="volver" onclick="mostrarSeccion('menu-principal')">⬅ Volver</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
